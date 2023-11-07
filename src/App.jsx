@@ -1,10 +1,11 @@
 import './App.css'
+import DropdownMenu from './components/DropdownMenu.jsx';
 
 function App() {
   return (
-    <div>
+    <div className="gpt-app-link">
       <div>GPT App links</div>
-      {/* ここにリンクアイテムを追加するコードを記述します */}
+      <DropdownMenu />
     </div>
   );
 }
