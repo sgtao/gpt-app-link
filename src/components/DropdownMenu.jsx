@@ -14,7 +14,7 @@ function DropdownMenu() {
             url: "https://sgtao.github.io/gpt-prompt-templates/"
         },
         {
-            label: "Prompt Engineering Guid",
+            label: "Prompt Engineering Guide",
             url: "https://www.promptingguide.ai/jp/introduction/examples"
         },
         {
@@ -38,12 +38,13 @@ function DropdownMenu() {
         <div>
             <button onClick={toggleMenu}>Show Menu</button>
             {isOpen && (
-                <ul>
+                <ul style={{ textAlign: "left", overflow: "hidden" }}>
                     {
                         linkItems.map((item, index) => (
                             <li style={{ width: "100%" }} key={index}>
                                 <a  style={{ whiteSpace: "nowrap", overflow: "hidden" }}
-                                    href={item.url} target="_blank" rel="noreferrer" 
+                                    href={item.url} target="_blank" rel="noreferrer"
+                                    title={item.label}
                                 >
                                     {item.label}
                                 </a>

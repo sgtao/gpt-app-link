@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "GPT App links",
     "version": "1.0",
-    "description": "A demo of the Web Speech API in a Chrome extension",
+    "description": "List of link items related to Chat-GPT",
     "permissions": [
         "activeTab"
     ],
