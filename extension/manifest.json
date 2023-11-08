@@ -12,7 +12,11 @@
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "https://chat.openai.com/*",
+                "https://bard.google.com/*",
+                "https://www.perplexity.ai/*",
+                "https://sharev3.click.dev/*",
+                "https://www.bing.com/*"
             ],
             "js": [
                 "assets/contents.js"
