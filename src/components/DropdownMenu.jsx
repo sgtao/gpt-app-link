@@ -1,5 +1,7 @@
 // DropdownMenu.jsx
 import { useState } from 'react';
+import styled from "styled-components";
+
 
 function DropdownMenu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -7,6 +9,35 @@ function DropdownMenu() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+    const StyledButton = styled.button`
+        border-radius: 8px;
+        border: 1px solid transparent;
+        padding: 0.6em 1.2em;
+        font-size: 1em;
+        font-weight: 500;
+        font-family: inherit;
+        background-color: white;
+        color: #1a1a1a;
+        cursor: pointer;
+        transition: border-color 0.25s;
+        &:hover {
+            border: 3px solid transparent;
+            border-color: #646cff;
+            color: #646cff;
+        }
+        &:focus,
+        &:focus-visible {
+            outline: 4px auto -webkit-focus-ring-color;
+        }
+    `;
+    const StyledLink = styled.a`
+        white-space: nowrap;
+        overflow: hidden;
+        color: white;
+        &:hover {
+            color: #747bff;
+        }
+    `;
 
     const linkItems = [
         {
@@ -36,18 +67,18 @@ function DropdownMenu() {
     ];
     return (
         <div>
-            <button onClick={toggleMenu}>Show Menu</button>
+            <StyledButton onClick={toggleMenu}>Show Menu</StyledButton>
             {isOpen && (
                 <ul style={{ textAlign: "left", overflow: "hidden" }}>
                     {
                         linkItems.map((item, index) => (
                             <li style={{ width: "100%" }} key={index}>
-                                <a  style={{ whiteSpace: "nowrap", overflow: "hidden" }}
+                                <StyledLink
                                     href={item.url} target="_blank" rel="noreferrer"
                                     title={item.label}
                                 >
                                     {item.label}
-                                </a>
+                                </StyledLink>
                             </li>
 
                         ))
